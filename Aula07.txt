@@ -1,0 +1,52 @@
+INSERT INTO cursos VALUES
+('1', 'HTML5', 'Curso de HTML5', '40', '37', '2014'),
+('2', 'Algoritmos', 'Lógica de Programação', '20', '15', '2014'),
+('3', 'Photoshop', 'Dicas de Photoshop CC', '10', '8', '2014'),
+('4', 'PHP', 'Curso de PHP para iniciantes', '40', '20', '2010'),
+('5', 'Jarva', 'Introdução à Linguagem Java', '10', '29', '2010'),
+('6', 'MySQL', 'Banco de Dados MySQL', '30', '15', '2016'),
+('7', 'Word', 'Curso completo de Word', '40', '30', '2016'),
+('8', 'Sapateado', 'Danças Rítmicas', '40', '30', '2018'),
+('9', 'Cozinha Árabe', 'Aprenda a fazer kibe', '40', '30', '2018'),
+('10', 'YouTuber', 'Gerar polêmica e ganhar iscritos', '5', '2', '2018');
+
+//alterando o nome na linha 1 da tabela cursos
+
+UPDATE cursos
+SET nome = 'HTML5'
+WHERE idcurso = '1';
+
+UPDATE cursos
+SET nome = 'PHP', ano = '2015'
+WHERE idcurso = '4';
+
+UPDATE cursos
+SET nome = 'Java', carga = '40', ano = '2015'
+WHERE idcurso = '5';
+LIMIT 1;
+
+// limit 1; limita a ação do comando p afetar 1 linha
+
+//alterando todos os anos e cargas de quem tem 2018 no ano
+UPDATE cursos
+set ano='2050', carga = '800'
+where ano = '2018';
+
+UPDATE cursos
+set ano='2018', carga = '0'
+where ano = '2050'
+LIMIT 1;
+
+//apagando a linha do id 8
+DELETE FROM cursos
+where idcurso = '8';
+
+//apagando as linhas q contém o ano 2050
+DELETE FROM cursos
+where ano='2050'
+limit 2;
+
+//apagar todos os registros da tabela cursos
+TRUNCATE TABLE cursos;
+
+DROP TABLE APAGA A TABELA TODA, TRUNCATE SÓ OS REGISTROS

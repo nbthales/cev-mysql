@@ -1,0 +1,35 @@
+SELECT * FROM cursos WHERE nome LIKE 'P%';
+SELECT * FROM cursos WHERE nome LIKE '%a';
+SELECT * FROM cursos WHERE nome LIKE '%g%';
+SELECT * FROM cursos WHERE nome NOT LIKE '%a%';
+
+UPDATE cursos SET nome = 'PáOO' where idcurso = '9';
+
+SELECT * FROM cursos WHERE nome LIKE 'ph%p';
+SELECT * FROM cursos WHERE nome LIKE 'ph%p%';
+SELECT * FROM cursos WHERE nome LIKE 'ph%p_';
+SELECT * FROM cursos WHERE nome LIKE 'p__t%';
+
+
+SELECT * FROM gafanhotos WHERE nome LIKE '%silva%';
+SELECT * FROM gafanhotos WHERE nome LIKE '%_silva%';
+SELECT DISTINCT nacionalidade FROM gafanhotos ORDER BY nacionalidade;
+
+SELECT COUNT(*) FROM cursos;
+SELECT COUNT(*) FROM cursos WHERE carga > 40;
+select MAX(carga) FROM cursos;
+SELECT MAX(totaulas) FROM cursos WHERE ano = '2016';
+SELECT MIN(totaulas) FROM cursos;
+SELECT nome, min(totaulas) FROM cursos WHERE ano='2016';
+SELECT SUM(totaulas) FROM cursos;
+SELECT AVG(totaulas) FROM cursos WHERE ano = '2016';
+
+ex1: SELECT * FROM gafanhotos WHERE sexo = 'F';
+ex2: SELECT * FROM gafanhotos WHERE nascimento BETWEEN '2000-01-01' and '2015-12-31';
+ex3: SELECT nome FROM gafanhotos WHERE profissao = 'programador' and sexo='M';
+ex4: SELECT * FROM gafanhotos WHERE nacionalidade ='Brasil' and sexo='F' and nome like'j%';
+ex5: SELECT nome, nacionalidade FROM gafanhotos WHERE sexo='M' and nome like'%Silva%' and peso < 100 and nacionalidade != 'Brasil';
+ex6: SELECT MAX(altura) FROM gafanhotos WHERE sexo='M' and nacionalidade = 'Brasil';
+ex7: SELECT AVG(peso) FROM gafanhotos;
+ex8: SELECT MIN(peso) FROM gafanhotos WHERE nacionalidade !='Brasil' and sexo='F' and nascimento BETWEEN '1990-01-01' and '2000-12-31';
+ex9: SELECT count(*) FROM gafanhotos WHERE altura > '1.90' and sexo='F';

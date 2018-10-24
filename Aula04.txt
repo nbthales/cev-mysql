@@ -1,0 +1,28 @@
+criando um db e colocando parâmetros(Constraints)
+	create database cadastro
+	default character set utf8
+	default collate utf8_general_ci;
+codificação de caracteres por padrão
+p trabalhar com caracteres com acento
+
+	use cadastro; //vai p bd de cadastro
+
+criando tabela com parâmetros
+	CREATE TABLE `pessoas`(
+	id int NOT NULL AUTO_INCREMENT,
+	`nome` varchar(30) NOT NULL,
+	`nascimento` date,
+	`sexo` enum('M','F'),
+	`peso` decimal(5,2),
+	`altura` decimal (3,2),
+	`nacionalidade` varchar(20) DEFAULT 'Brasil',
+	PRIMARY KEY (id)
+	)DEFAULT CHARSET = utf8; 
+//conjunto de caracteres p suportar (acento)
+//CONSTRAINT (PARÂMETRO) NOT NULL = VAI TER Q PREENCHER OS DADOS
+//enum = quais são os valores aceitos, M ou F
+//decimal (5,2) = 999,99
+//nacionalidade, se ninguém digitar nada, por default fica brasil
+//``permite que use campos com acento, espaço etc
+//AUTO_INCREMENT incrementa um numero p cada cadastro
+//PRIMARY KEY(id) ele não se repete

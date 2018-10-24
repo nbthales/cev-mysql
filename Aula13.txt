@@ -1,0 +1,31 @@
+DISTINGUINDO
+
+SELECT DISTINCT carga FROM cursos ORDER BY carga;
+SELECT carga FROM cursos GROUP BY carga;
+
+SELECT totaulas FROM cursos GROUP BY totaulas ORDER BY totaulas;
+
+SELECT * FROM cursos WHERE totaulas = 30;
+
+SELECT carga, count(nome) FROM cursos WHERE totaulas = 30 GROUP BY carga;
+
+SELECT ano, count(*) FROM cursos 
+GROUP BY ano 
+HAVING count(ano) >= 5
+ORDER BY count(*) desc;
+
+SELECT ano, count(*) FROM cursos 
+WHERE totaulas > 30
+GROUP BY ano 
+HAVING ano > 2013
+ORDER BY count(*) desc;
+
+SELECT carga, count(*) FROM cursos
+WHERE ano > 2015
+GROUP BY carga
+HAVING carga > (SELECT AVG(carga) FROM CURSOS);
+
+EX1: SELECT profissao, COUNT(*) FROM gafanhotos GROUP BY profissao;
+EX2: SELECT sexo, COUNT(*) FROM gafanhotos WHERE nascimento > '2005-01-01' GROUP BY sexo;
+EX3: SELECT nacionalidade, COUNT(*) FROM gafanhotos WHERE nacionalidade != 'Brasil' GROUP BY nacionalidade HAVING COUNT(nacionalidade) > 3;
+EX4: SELECT altura, peso, count(*) FROM gafanhotos WHERE peso > 100 GROUP BY altura HAVING altura > (SELECT AVG(altura) FROM gafanhotos);

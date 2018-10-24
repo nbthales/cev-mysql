@@ -1,0 +1,20 @@
+Abra o shell pelo xampp ou se for pelo cmd
+cd C:\xampp\mysql\bin
+mysql -u root -p
+
+show databases; //mostra os bd criados
+use cadastro; //abre o bd cadastro
+status; //mostra o bd que está aberto
+show tables; //mostra quais as tabelas
+describe pessoas; //descreve a table
+
+exit; //fecha o console
+
+show databases; // mostra todos seus bd
+ 
+ status // verifica qual bd está aberto no momento
+ 
+ 
+ select * from cursos;
+ update cursos set nome='PhP' where idcurso ='4';
+ show create table amigos; //mostra o comando q criou a tabela

@@ -1,0 +1,18 @@
+create database cadastro; //cria o bd de cadastro
+use cadastro; //abre o bd cadastro
+
+ create table pessoas (
+ nome varchar(30),
+ idade tinyint(3)
+ ); //cria uma tabela, e cada campo com seu tipo primitivo
+
+drop database cadastro; //exclui o bd de cadastro
+
+
+colocando parâmetros(constraints) criando um db
+ create database cadastro
+ default character set utf8
+ default collate utf8_general_ci;
+codificação de caracteres por padrão
+p trabalhar com caracteres com acento
+

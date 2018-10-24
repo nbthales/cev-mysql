@@ -1,0 +1,24 @@
+use cadastro;
+describe gafanhotos;
+
+ALTER TABLE gafanhotos ADD cursopreferido int;
+
+select * from gafanhotos;
+select * from cursos;
+
+update gafanhotos set cursopreferido = '6' where id = '1';
+
+SELECT gafanhotos.nome, cursos.nome, cursos.ano
+FROM gafanhotos JOIN cursos
+ON cursos.idcurso = gafanhotos.cursopreferido
+ORDER BY gafanhotos.nome;
+
+SELECT g.nome, c.nome, c.ano
+FROM gafanhotos AS g JOIN cursos AS c
+ON c.idcurso = g.cursopreferido
+ORDER BY g.nome;
+
+SELECT g.nome, c.nome, c.ano
+FROM gafanhotos AS g LEFT OUTER JOIN cursos AS c
+ON c.idcurso = g.cursopreferido;
+

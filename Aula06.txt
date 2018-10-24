@@ -1,0 +1,54 @@
+describe pessoas; //ou 
+desc pessoas;
+
+
+//adicionando uma coluna em tabela já existente
+alter table pessoas
+add column profissao varchar(10);
+
+//removendo coluna
+ALTER TABLE pessoas
+DROP COLUMN profissao;
+
+//adicionando coluna na tabela e escolhendo posicao
+ALTER TABLE pessoas
+ADD COLUMN profissao varchar(10) AFTER nome;
+
+// não tem como adicionar coluna antes da outra, sempre depois
+// ou se quiser colocar na primeira, FIRST
+ALTER TABLE pessoas
+ADD COLUMN teste varchar(10) FIRST;
+
+//A PALAVRA COLUMN É OPCIONAL
+
+//MODIFICANDO DEFINIÇÕES
+ALTER TABLE pessoas
+MODIFY COLUMN profissao varchar(20) NOT NULL default '';
+
+//MODIFICANDO O NOME DA COLUNA
+ALTER TABLE pessoas
+CHANGE COLUMN profissao prof varchar(20);
+
+//MODIFICANDO O NOME DA TABELA
+ALTER TABLE pessoas
+rename to gafanhotos;
+
+CREATE TABLE IF NOT EXISTS cursos ( //só cria se não existir
+nome VARCHAR(30) NOT NULL UNIQUE, // NOME UNICO
+descricao text,
+carga int unsigned, //unsigned não deixa o valor ser negativo
+totaulas int unsigned,
+ano year default '2016'
+)DEFAULT CHARSET=utf8;
+
+ALTER TABLE cursos
+ADD COLUMN idcurso int FIRST;
+
+//ADICIONANDO PRIMARY KEY EM CAMPO DE TABELA JÁ EXISTENTE
+ALTER TABLE cursos
+ADD PRIMARY KEY(idcurso);
+
+ALTER TABLE DROP //APAGA A COLUNA
+DROP TABLE //APAGA A TABELA
+
+
